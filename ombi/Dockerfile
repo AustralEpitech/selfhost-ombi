@@ -20,5 +20,6 @@ RUN apt-get update && apt-get install -y \
     rm -rf /var/lib/apt/
 COPY docker-entrypoint.sh /usr/local/bin/
 RUN useradd -m app
+EXPOSE 5000
 ENTRYPOINT ["docker-entrypoint.sh"]
 CMD ["./Ombi"]

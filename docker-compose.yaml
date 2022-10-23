@@ -3,7 +3,7 @@ version: "3.7"
 
 services:
   install_site:
-    build: install_site/
+    build: install_site
     ports:
       - "80:80"
     environment:
@@ -11,11 +11,11 @@ services:
       - EMAIL=$EMAIL
     volumes:
       - ./nginx.conf:/web/ombi.conf
-      - sites-availables:/sites-availables
-      - certs:/etc/letsencrypt
+      - sites-availables:/sites-availables/
+      - certs:/etc/letsencrypt/
 
   ombi:
-    build: ombi/
+    build: ombi
     restart: always
     env_file:
       - .env
