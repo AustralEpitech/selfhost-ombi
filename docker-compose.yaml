@@ -16,7 +16,7 @@ services:
 
   ombi:
     build: ombi
-    restart: always
+    restart: unless_stopped
     env_file:
       - .env
     networks:
